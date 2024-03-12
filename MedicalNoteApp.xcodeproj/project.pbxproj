@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE5045002BA021BE002114BA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5044FF2BA021BE002114BA /* Item.swift */; };
 		EEE272CA2BA01A23004FA082 /* MedicalNoteAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE272C92BA01A23004FA082 /* MedicalNoteAppApp.swift */; };
 		EEE272CC2BA01A23004FA082 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE272CB2BA01A23004FA082 /* ContentView.swift */; };
 		EEE272CE2BA01A24004FA082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE272CD2BA01A24004FA082 /* Assets.xcassets */; };
 		EEE272D12BA01A24004FA082 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE272D02BA01A24004FA082 /* Preview Assets.xcassets */; };
-		EEE272D82BA01A6B004FA082 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE272D72BA01A6B004FA082 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE5044FF2BA021BE002114BA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EEE272C62BA01A23004FA082 /* MedicalNoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalNoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE272C92BA01A23004FA082 /* MedicalNoteAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalNoteAppApp.swift; sourceTree = "<group>"; };
 		EEE272CB2BA01A23004FA082 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EEE272CD2BA01A24004FA082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEE272D02BA01A24004FA082 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EEE272D72BA01A6B004FA082 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../../MedicineNoteApp1/MedicineNoteApp/Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				EEE272C92BA01A23004FA082 /* MedicalNoteAppApp.swift */,
+				EE5044FF2BA021BE002114BA /* Item.swift */,
 				EEE272CB2BA01A23004FA082 /* ContentView.swift */,
-				EEE272D72BA01A6B004FA082 /* Item.swift */,
 				EEE272CD2BA01A24004FA082 /* Assets.xcassets */,
 				EEE272CF2BA01A24004FA082 /* Preview Content */,
 			);
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE272CC2BA01A23004FA082 /* ContentView.swift in Sources */,
-				EEE272D82BA01A6B004FA082 /* Item.swift in Sources */,
+				EE5045002BA021BE002114BA /* Item.swift in Sources */,
 				EEE272CA2BA01A23004FA082 /* MedicalNoteAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
