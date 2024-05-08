@@ -47,7 +47,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         diaryText = "朝分の薬を飲みました"
-                        let newItem = Item(timestamp: selectedDate, diaryText: diaryText)
+                        let newItem = Item(timestamp: createTimestamp(selectedDate: selectedDate), diaryText: diaryText)
                         modelContext.insert(newItem)
                     }) {
                         Text("朝")
@@ -59,7 +59,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         diaryText = "お昼分の薬を飲みました"
-                        let newItem = Item(timestamp: selectedDate, diaryText: diaryText)
+                        let newItem = Item(timestamp: createTimestamp(selectedDate: selectedDate), diaryText: diaryText)
                         modelContext.insert(newItem)
                     }) {
                         Text("昼")
@@ -71,7 +71,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         diaryText = "夜分の薬を飲みました"
-                        let newItem = Item(timestamp: selectedDate, diaryText: diaryText)
+                        let newItem = Item(timestamp: createTimestamp(selectedDate: selectedDate), diaryText: diaryText)
                         modelContext.insert(newItem)
                     }) {
                         Text("夜")
@@ -104,6 +104,8 @@ struct ContentView: View {
             Text("Select an item")
         }
     }
+    
+    // アイテムを追加します。
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: selectedDate, diaryText: diaryText)
@@ -111,6 +113,7 @@ struct ContentView: View {
         }
     }
     
+    // アイテムを更新します。
     private func updateItem(_ item: Item) {
         withAnimation {
             item.diaryText = diaryText
@@ -118,6 +121,7 @@ struct ContentView: View {
         }
     }
     
+    // アイテムを削除します。
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -126,9 +130,29 @@ struct ContentView: View {
         }
     }
     
+    // アイテムをフィルタリングします。
     private func filteredItems(for date: Date) -> [Item] {
         return items.filter { Calendar.current.isDate($0.timestamp, inSameDayAs: date) }
     }
+    
+    // タイムスタンプを作成します。
+    func createTimestamp(selectedDate: Date) -> Date {
+        let calendar = Calendar.current
+        let selectedComponents = calendar.dateComponents([.year, .month, .day], from: selectedDate)
+        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: Date())
+        let combinedComponents = DateComponents(
+            year: selectedComponents.year,
+            month: selectedComponents.month,
+            day: selectedComponents.day,
+            hour: timeComponents.hour,
+            minute: timeComponents.minute,
+            second: timeComponents.second
+        )
+        
+        // `date(from:)` が nil を返す可能性があるが、通常は有効な日付が生成されることを前提とする
+        return calendar.date(from: combinedComponents) ?? Date()  // 無効な場合は現在時刻を返す
+    }
+
 }
 
 struct DiaryEntryView: View {
